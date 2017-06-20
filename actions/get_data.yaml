@@ -7,4 +7,4 @@ parameters:
     default: get_data
     immutable: true
     type: string
-runner_type: run-python
+runner_type: python-script

@@ -11,4 +11,4 @@ parameters:
     default: get_all_droplets
     immutable: true
     type: string
-runner_type: run-python
+runner_type: python-script

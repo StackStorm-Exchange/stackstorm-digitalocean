@@ -37,7 +37,7 @@ def generate_meta(actions, pack):
                     "default": action
                 }
             },
-            "runner_type": "run-python",
+            "runner_type": "python-script",
             "description": "",
             "enabled": True,
             "entry_point": "do.py"
