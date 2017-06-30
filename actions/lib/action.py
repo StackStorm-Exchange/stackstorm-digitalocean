@@ -10,6 +10,7 @@ def digitalocean_obj_to_dict(obj):
         del obj_dict['_log']
     return obj_dict
 
+
 class BaseAction(Action):
 
     def __init__(self, config):
