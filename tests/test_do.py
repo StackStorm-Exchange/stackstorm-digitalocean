@@ -7,6 +7,7 @@ import copy
 import json
 import mock
 
+
 class TestLibAction(DigitalOceanBaseActionTestCase):
     __test__ = True
     action_cls = DigitalOceanManager
@@ -40,7 +41,7 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
         result = BaseAction.digitalocean_obj_to_dict(droplet)
         self.assertEqual(result, expected)
 
-    def test_digitalocean_obj_to_dict(self):
+    def test_digitalocean_obj_to_dict_json(self):
         expected = self.droplet_dict
         droplet = self.dict_to_droplet(expected)
         result = BaseAction.digitalocean_obj_to_dict(droplet)
@@ -70,7 +71,6 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
         self.assertEqual(result[1], self.droplet_dict)
         mock_droplet_cls.assert_called_with(token=config['token'])
         mock_droplet_obj.get_droplet.assert_called_with(**expected_kwargs_dict)
-
 
     @mock.patch('digitalocean.Droplet')
     def test_run(self, mock_droplet_cls):
