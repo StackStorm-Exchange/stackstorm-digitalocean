@@ -4,7 +4,6 @@ from lib.action import BaseAction
 from st2actions.runners.pythonrunner import Action
 
 import copy
-import digitalocean
 import json
 import mock
 
