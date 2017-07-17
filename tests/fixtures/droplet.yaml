@@ -1,0 +1,104 @@
+---
+action_ids: []
+backup_ids: []
+backups: false
+created_at: '2017-04-18T20:11:18Z'
+disk: 20
+end_point: https://api.digitalocean.com/v2/
+features: []
+id: 12345
+image:
+  created_at: '2017-03-03T16:10:57Z'
+  distribution: Ubuntu
+  id: 1234
+  min_disk_size: 20
+  name: LAMP on 14.04
+  public: true
+  regions:
+    - nyc1
+    - sfo1
+    - nyc2
+    - ams2
+    - sgp1
+    - lon1
+    - nyc3
+    - ams3
+    - fra1
+    - tor1
+    - sfo2
+    - blr1
+  size_gigabytes: 0.5
+  slug: lamp
+  type: snapshot
+ip_address: x.x.x.x
+ip_v6_address: null
+ipv6: false
+kernel: null
+locked: false
+memory: 512
+monitoring: null
+name: sendy
+networks:
+  v4:
+    - gateway: x.x.x.x
+      ip_address: x.x.x.x
+      netmask: 255.255.255.0
+      type: public
+  v6: []
+next_backup_window: null
+private_ip_address: null
+private_networking: false
+region:
+  available: true
+  features:
+    - private_networking
+    - backups
+    - ipv6
+    - metadata
+    - install_agent
+  name: New York 2
+  sizes:
+    - 512mb
+    - 1gb
+    - 2gb
+    - 4gb
+    - 8gb
+    - 16gb
+    - 32gb
+    - 48gb
+    - 64gb
+  slug: nyc2
+size:
+  available: true
+  disk: 20
+  memory: 512
+  price_hourly: 0.00744
+  price_monthly: 5.0
+  regions:
+    - ams2
+    - ams3
+    - blr1
+    - fra1
+    - lon1
+    - nyc1
+    - nyc2
+    - nyc3
+    - sfo1
+    - sfo2
+    - sgp1
+    - tor1
+  slug: 512mb
+  transfer: 1.0
+  vcpus: 1
+size_slug: 512mb
+snapshot_ids: []
+ssh_keys: []
+status: active
+tags:
+  - emailer
+  - spamtester
+token: abc123
+user_data: null
+vcpus: 1
+volume_ids: []
+volumes: []
