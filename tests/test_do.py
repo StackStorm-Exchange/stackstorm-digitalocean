@@ -1,7 +1,7 @@
 from digitalocean_base_action_test_case import DigitalOceanBaseActionTestCase
 from do import DigitalOceanManager
 from lib.action import BaseAction
-from st2actions.runners.pythonrunner import Action
+from st2common.runners.base_action import Action
 
 import copy
 import json
