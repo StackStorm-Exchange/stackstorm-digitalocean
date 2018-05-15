@@ -59,6 +59,7 @@ def generate_meta(actions, pack):
         fh.write(yaml.dump(action_meta, default_flow_style=False))
         fh.close()
 
+
 actions = get_methods(digitalocean.Manager)
 
 generate_meta(actions, 'digitalocean')
