@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.3.2
+
+- Version bump to fix tagging issues
+
 # 0.3.1
 
 - Added unit tests
