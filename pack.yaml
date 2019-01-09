@@ -3,5 +3,8 @@ ref: digitalocean
 name: Digital Ocean
 description: Digital Ocean integration.
 version: 0.3.2
+python_versions:
+  - "2"
+  - "3"
 author: StackStorm, Inc.
 email: info@stackstorm.com
