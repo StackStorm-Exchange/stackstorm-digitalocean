@@ -19,7 +19,7 @@ def get_methods(module):
                     functions[member] = dict(zip(argspec.args[-len(argspec.defaults):],
                                                  argspec.defaults))
                     for arg in argspec.args:
-                        if arg not in functions[member] and arg is not 'self':
+                        if arg not in functions[member] and arg != 'self':
                             functions[member][arg] = 'required'
     return functions
 
