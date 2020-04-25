@@ -15,6 +15,9 @@ class BaseAction(Action):
         # digitalocean.baseapi.BaseAPI has a field named _log that doesn't like to be serialized
         if "_log" in obj_dict:
             del obj_dict['_log']
+        # digitalocean.baseapi.BaseAPI has a field named _log that doesn't like to be serialized
+        if "_session" in obj_dict:
+            del obj_dict['_session']
         return obj_dict
 
     def do_action(self, cls, action, **kwargs):
