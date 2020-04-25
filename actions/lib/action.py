@@ -12,9 +12,10 @@ class BaseAction(Action):
     @staticmethod
     def digitalocean_obj_to_dict(obj):
         obj_dict = obj.__dict__
-        # digitalocean.baseapi.BaseAPI has a field named _log that doesn't like to be serialized
-        if "_log" in obj_dict:
-            del obj_dict['_log']
+        # digitalocean.baseapi.BaseAPI has fields named _log and _session that don't like to be
+        # serialized
+        obj_dict.pop('_log', None)
+        obj_dict.pop('_session', None)
         return obj_dict
 
     def do_action(self, cls, action, **kwargs):

@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.3.3
+
+- Fix JSON serialization with recent upstream digitalocean package changes
+
 # 0.3.2
 
 - Version bump to fix tagging issues

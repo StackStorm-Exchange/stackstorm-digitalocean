@@ -11,6 +11,7 @@ import mock
 class TestLibAction(DigitalOceanBaseActionTestCase):
     __test__ = True
     action_cls = DigitalOceanManager
+    maxDiff = None
 
     def test_init(self):
         action = self.get_action_instance(self.config_good)
