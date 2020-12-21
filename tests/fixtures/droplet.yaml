@@ -97,7 +97,8 @@ status: active
 tags:
   - emailer
   - spamtester
-token: abc123
+tokens:
+  - abc123
 user_data: null
 vcpus: 1
 volume_ids: []

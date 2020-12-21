@@ -32,7 +32,7 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
         expected = self.droplet_dict
         droplet = self.dict_to_droplet(expected)
         result = BaseAction.digitalocean_obj_to_dict(droplet)
-        self.assertEqual(result, expected)
+        self.assertDictContains(expected, result)
 
     def test_digitalocean_obj_to_dict__log_removed(self):
         expected = self.droplet_dict
@@ -40,17 +40,17 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
         droplet_copy['_log'] = "test log removed"
         droplet = self.dict_to_droplet(droplet_copy)
         result = BaseAction.digitalocean_obj_to_dict(droplet)
-        self.assertEqual(result, expected)
+        self.assertDictContains(expected, result)
 
     def test_digitalocean_obj_to_dict_json(self):
         expected = self.droplet_dict
         droplet = self.dict_to_droplet(expected)
         result = BaseAction.digitalocean_obj_to_dict(droplet)
-        self.assertEqual(result, expected)
+        self.assertDictContains(expected, result)
 
         json_str = json.dumps(droplet, default=BaseAction.digitalocean_obj_to_dict)
         json_result = json.loads(json_str)
-        self.assertEqual(json_result, expected)
+        self.assertDictContains(expected, json_result)
 
     @mock.patch('digitalocean.Droplet')
     def test_do_action(self, mock_droplet_cls):
@@ -69,7 +69,7 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
 
         result = action_instance.do_action(cls, action, **expected_kwargs_dict)
         self.assertEqual(result[0], True)
-        self.assertEqual(result[1], self.droplet_dict)
+        self.assertDictContains(self.droplet_dict, result[1])
         mock_droplet_cls.assert_called_with(token=config['token'])
         mock_droplet_obj.get_droplet.assert_called_with(**expected_kwargs_dict)
 
@@ -93,7 +93,8 @@ class TestLibAction(DigitalOceanBaseActionTestCase):
 
         result = action_instance.run(**run_kwargs)
         self.assertEqual(result[0], True)
-        self.assertEqual(result[1], self.droplet_dict)
+        # Ensure that the result contains _at least_ what we expect
+        self.assertDictContains(self.droplet_dict, result[1])
         mock_droplet_cls.assert_called_with(token=config['token'])
         mock_droplet_obj.get_droplet.assert_called_with(**expected_action_kwargs)
 
