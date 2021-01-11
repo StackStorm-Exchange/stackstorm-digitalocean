@@ -1,3 +1,5 @@
+import six
+
 from st2tests.base import BaseActionTestCase
 
 import copy
@@ -41,3 +43,10 @@ class DigitalOceanBaseActionTestCase(BaseActionTestCase):
     @property
     def droplet_dict(self):
         return self._droplet_dict
+
+    def assertDictContains(self, expected, actual):
+        # TODO: Life will be so much better with just Python 3
+        # Create a copy of actual with simple str keys
+        _actual = {str(k): str(v) if isinstance(v, six.string_types) else v for k, v in actual.items()}  # noqa: E501
+        actual_subset = {key: _actual[key] for key in expected if key in _actual}  # noqa: E501
+        self.assertEqual(expected, actual_subset)
