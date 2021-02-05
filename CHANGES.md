@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.0.0
+
+* Drop Python 2.7 support
+
 # 0.3.3
 
 - Fix JSON serialization with recent upstream digitalocean package changes
