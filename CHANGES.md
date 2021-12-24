@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.1.0
+
+* Pack renamed to DigitalOcean
+
 # 1.0.0
 
 * Drop Python 2.7 support
@@ -15,13 +19,13 @@
 # 0.3.1
 
 - Added unit tests
-  (contributed by: Nick Maludy - Encore Technologies) 
-  
+  (contributed by: Nick Maludy - Encore Technologies)
+
 - Fixed a bug where `digitalocean` python module was returning custom objects instead
   of dicts/lists causing StackStorm to ignore the results. After this fix all
   objects returned from `digitaloceean` API calls should be converted into StackStorm
-  friendly dicts/lists. 
-  (fixed by: Nick Maludy - Encore Technologies) 
+  friendly dicts/lists.
+  (fixed by: Nick Maludy - Encore Technologies)
   (reported by: Casey Havenor)
 
 # 0.3.0
@@ -34,4 +38,4 @@
 
 # 0.1.0
 
-- First release 
+- First release
